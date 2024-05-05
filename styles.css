@@ -16,3 +16,27 @@ h1 {
     line-height: 1;
     margin-top: 45px;
 }
+
+.score {
+    color: #4caf50;
+    background-color: #302f2fed;
+    padding: 1rem;
+    margin: 1rem;
+    display: inline-block;
+}
+
+.controls {
+    margin: 5px;
+    text-align: center;
+}
+
+.start-btn {
+    padding: 10px 25px;
+    outline: none;
+    font-style: 24px;
+    background-color: #c2185b;
+    color: #fff;
+    border: 0px;
+    box-shadow: 1px 2px 4px #c2185bb0;
+    cursor: pointer;
+}
