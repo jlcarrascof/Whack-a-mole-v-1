@@ -1,16 +1,16 @@
-const holes = document.querySelectorAll('.hole');
-const moles = document.querySelectorAll('.mole');
-const scoreBoard = document.querySelector('.score');
-const startBtn = document.querySelector('.start-btn');
-const levels = document.querySelectorAll('.levels');
-const game = document.querySelector('.game');
+const holes = document.querySelector(".hole");
+const moles = document.querySelector(".mole");
+const scoreBoard = document.querySelector(".score");
+const startBtn = document.querySelector(".start-btn");
+const levels = document.querySelector(".levels");
+const game = document.querySelector(".game");
 
 let lastHole;
 let timeUp = false;
 let score = 0;
 
 function difficultyLevel() {
-    const ele = document.getElementsByName('level');
+    const ele = document.getElementsByName("level");
     for(let i = 0; i < ele.length; i++) {
         if(ele[i].checked) {
             return ele[i].id;
@@ -61,18 +61,18 @@ function startGame() {
 
     scoreBoard.textContent = 0;
     timeUp = false;
-    startBtn.innerHTML = 'running ...';
+    startBtn.innerHTML = "running ...";
     startBtn.disabled = true;
-    levels.style.visibility = 'hidden';
+    levels.style.visibility = "hidden";
     score = 0;
 
     peep(show, hide);
 
     setTimeout(() => {
         timeUp = true;
-        startBtn.innerHTML = 'start!';
+        startBtn.innerHTML = "start!";
         startBtn.disabled = false;
-        levels.style.visibility = 'visible';
+        levels.style.visibility = "visible";
     }, 15000);
 
 }
