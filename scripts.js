@@ -73,3 +73,18 @@ function startGame() {
     levels.style.visibility = "visible";
   }, 15000);
 }
+
+function hitTheMole(e) {
+
+    if (!e.isTrusted) {
+        return;
+    }
+
+    score++;
+    this.parentNode.classList.remove("up");
+    scoreBoard.textContent = score;
+}
+
+moles.forEach((mole) => {
+    mole.addEventListener("click", hitTheMole);
+});
