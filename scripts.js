@@ -44,3 +44,35 @@ function peep(show, hide) {
         }
     }, time);
 }
+
+function startGame() {
+    let show, hide;
+    const difficulty = difficultyLevel();
+    if (difficulty === "easy") {
+        show = 500;
+        hide = 1500;
+    } else if (difficulty === "medium") {
+        show = 200;
+        hide = 1000;
+    } else {
+        show = 100;
+        hide = 800;
+    }
+
+    scoreBoard.textContent = 0;
+    timeUp = false;
+    startBtn.innerHTML = 'running ...';
+    startBtn.disabled = true;
+    levels.style.visibility = 'hidden';
+    score = 0;
+
+    peep(show, hide);
+
+    setTimeout(() => {
+        timeUp = true;
+        startBtn.innerHTML = 'start!';
+        startBtn.disabled = false;
+        levels.style.visibility = 'visible';
+    }, 15000);
+
+}
