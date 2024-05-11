@@ -31,3 +31,16 @@ function randomHole(holes) {
     lastHole = hole;
     return hole;
 }
+
+function peep(show, hide) {
+    const time = randomTime(show, hide);
+    const hole = randomHole(holes);
+    hole.classList.add('up');
+
+    setTimeout(() => {
+        hole.classList.remove('up');
+        if (!timeUp) {
+            peep(show, hide);
+        }
+    }, time);
+}
